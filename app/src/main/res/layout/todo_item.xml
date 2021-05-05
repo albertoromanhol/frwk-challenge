@@ -16,16 +16,28 @@
         android:id="@+id/todo_item_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/default_value">
+        android:padding="@dimen/double_value">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/todo_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAppearance="?attr/textAppearanceHeadline6"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/todo_item_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_value"
             android:ellipsize="end"
             android:lines="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/todo_item_title"
+            app:layout_constraintTop_toBottomOf="@+id/todo_item_title"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary"
             />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -36,16 +48,9 @@
             android:ellipsize="end"
             android:lines="1"
             app:layout_constraintStart_toEndOf="@+id/todo_item_id"
-            app:layout_constraintTop_toTopOf="@+id/todo_item_id" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/todo_item_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_value"
-            android:lines="1"
-            app:layout_constraintStart_toStartOf="@+id/todo_item_id"
-            app:layout_constraintTop_toBottomOf="@+id/todo_item_id" />
+            app:layout_constraintTop_toTopOf="@+id/todo_item_id"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:attr/textColorSecondary" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/todo_item_completed"
@@ -54,8 +59,9 @@
             android:layout_marginTop="@dimen/default_value"
             android:ellipsize="end"
             android:lines="1"
-            app:layout_constraintStart_toStartOf="@+id/todo_item_title"
-            app:layout_constraintTop_toBottomOf="@+id/todo_item_title" />
+            app:layout_constraintStart_toStartOf="@+id/todo_item_id"
+            app:layout_constraintTop_toBottomOf="@+id/todo_item_id"
+            android:textAppearance="?attr/textAppearanceBody2"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

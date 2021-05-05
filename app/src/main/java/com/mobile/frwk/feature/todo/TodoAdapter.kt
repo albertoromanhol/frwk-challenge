@@ -26,8 +26,8 @@ class TodoAdapter : ListAdapter<TodoEntity, TodoAdapter.ViewHolder>(TodoDiffCall
 
             binding?.todoItemId?.text = "id: ${item.id}"
             binding?.todoItemUserId?.text = "userId: ${item.userId}"
-            binding?.todoItemTitle?.text = "title: ${item.title}"
-            binding?.todoItemCompleted?.text = if (item.completed) "completed" else "not completed"
+            binding?.todoItemTitle?.text = item.title
+            binding?.todoItemCompleted?.text = "status: ${if (item.completed) "COMPLETED" else "NOT COMPLETED"}"
 
             binding?.todoCard?.isChecked = item.completed
 

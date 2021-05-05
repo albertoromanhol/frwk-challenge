@@ -26,7 +26,7 @@ class AlbumAdapter : ListAdapter<AlbumEntity, AlbumAdapter.ViewHolder>(TodoDiffC
 
             binding?.albumItemId?.text = "id: ${item.id}"
             binding?.albumItemUserId?.text = "userId: ${item.userId}"
-            binding?.albumItemTitle?.text = "title: ${item.title}"
+            binding?.albumItemTitle?.text = "${item.title}"
 
             binding?.executePendingBindings()
         }

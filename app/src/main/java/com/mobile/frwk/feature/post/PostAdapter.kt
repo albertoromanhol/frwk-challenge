@@ -26,8 +26,8 @@ class PostAdapter : ListAdapter<PostEntity, PostAdapter.ViewHolder>(TodoDiffCall
 
             binding?.postItemId?.text = "id: ${item.id}"
             binding?.postItemUserId?.text = "userId: ${item.userId}"
-            binding?.postItemTitle?.text = "title: ${item.title}"
-            binding?.postItemBody?.text = "body: ${item.body}"
+            binding?.postItemTitle?.text = item.title
+            binding?.postItemBody?.text = item.body
 
             binding?.executePendingBindings()
         }

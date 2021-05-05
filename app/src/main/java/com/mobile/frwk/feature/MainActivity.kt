@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initViwes()
+        initViews()
         populateDatabase()
     }
 
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     // <editor-fold desc="[ Private Functions ]">
 
-    private fun initViwes() {
+    private fun initViews() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         callbackPosts.enqueue(
             object : Callback<List<PostEntity>> {
                 override fun onFailure(call: Call<List<PostEntity>>, t: Throwable) {
-                    Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, resources.getString(R.string.api_failed), Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onResponse(call: Call<List<PostEntity>>, response: Response<List<PostEntity>>) {
@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
         callbackAlbums.enqueue(
             object : Callback<List<AlbumEntity>> {
                 override fun onFailure(call: Call<List<AlbumEntity>>, t: Throwable) {
-                    Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, resources.getString(R.string.api_failed), Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onResponse(call: Call<List<AlbumEntity>>, response: Response<List<AlbumEntity>>) {
@@ -132,7 +132,7 @@ class MainActivity : AppCompatActivity() {
         callbackTodos.enqueue(
             object : Callback<List<TodoEntity>> {
                 override fun onFailure(call: Call<List<TodoEntity>>, t: Throwable) {
-                    Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, resources.getString(R.string.api_failed), Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onResponse(call: Call<List<TodoEntity>>, response: Response<List<TodoEntity>>) {

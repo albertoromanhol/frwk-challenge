@@ -9,4 +9,6 @@
     <string name="menu_posts">Postagem</string>
     <string name="menu_albums">Albuns</string>
     <string name="menu_todos">TODOs</string>
+
+    <string name="api_failed">Não foi possível consumir a API</string>
 </resources>

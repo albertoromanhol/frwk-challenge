@@ -3,51 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/album_card"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/album_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_value"
+        android:clickable="false"
+        app:cardCornerRadius="@dimen/default_value">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/album_item_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="false"
-            android:layout_margin="@dimen/default_value"
-            app:cardCornerRadius="@dimen/default_value"
-            >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/album_item_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/default_value">
+            android:padding="@dimen/double_value">
 
             <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/album_item_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:lines="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+                android:id="@+id/album_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAppearance="?attr/textAppearanceHeadline6" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/album_item_user_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_value"
-            android:ellipsize="end"
-            android:lines="1"
-            app:layout_constraintStart_toEndOf="@+id/album_item_id"
-            app:layout_constraintTop_toTopOf="@+id/album_item_id" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/album_item_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_value"
+                android:ellipsize="end"
+                android:lines="1"
+                app:layout_constraintStart_toStartOf="@+id/album_item_title"
+                app:layout_constraintTop_toBottomOf="@+id/album_item_title"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/album_item_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_value"
-            app:layout_constraintStart_toStartOf="@+id/album_item_id"
-            app:layout_constraintTop_toBottomOf="@+id/album_item_id" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/album_item_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_value"
+                android:ellipsize="end"
+                android:lines="1"
+                app:layout_constraintStart_toEndOf="@+id/album_item_id"
+                app:layout_constraintTop_toTopOf="@+id/album_item_id"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 
 </layout>
