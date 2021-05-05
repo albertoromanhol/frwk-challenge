@@ -9,6 +9,6 @@ import com.mobile.frwk.data.source.repository.contract.PostRepository
 
 class PostViewModel @ViewModelInject constructor(
     postRepository: PostRepository
-): ViewModel() {
+) : ViewModel() {
     val posts: LiveData<List<PostEntity>> = postRepository.getPosts().map { it }
 }

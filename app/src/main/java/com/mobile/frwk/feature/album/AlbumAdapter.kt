@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mobile.frwk.data.local.database.model.AlbumEntity
-import com.mobile.frwk.data.local.database.model.TodoEntity
 import com.mobile.frwk.databinding.AlbumItemBinding
-import com.mobile.frwk.databinding.TodoItemBinding
 
 class AlbumAdapter : ListAdapter<AlbumEntity, AlbumAdapter.ViewHolder>(TodoDiffCallback()) {
 
@@ -26,9 +24,9 @@ class AlbumAdapter : ListAdapter<AlbumEntity, AlbumAdapter.ViewHolder>(TodoDiffC
     ) : RecyclerView.ViewHolder(binding?.root!!) {
         fun bind(item: AlbumEntity) {
 
-            binding?.albumItemId?.text = item.id.toString()
-            binding?.albumItemUserId?.text = item.userId.toString()
-            binding?.albumItemTitle?.text = item.title
+            binding?.albumItemId?.text = "id: ${item.id}"
+            binding?.albumItemUserId?.text = "userId: ${item.userId}"
+            binding?.albumItemTitle?.text = "title: ${item.title}"
 
             binding?.executePendingBindings()
         }
@@ -42,7 +40,6 @@ class AlbumAdapter : ListAdapter<AlbumEntity, AlbumAdapter.ViewHolder>(TodoDiffC
         }
     }
 }
-
 
 class TodoDiffCallback : DiffUtil.ItemCallback<AlbumEntity>() {
     override fun areItemsTheSame(oldItem: AlbumEntity, newItem: AlbumEntity): Boolean {

@@ -11,7 +11,7 @@ import com.mobile.frwk.databinding.PostFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PostFragment  : Fragment() {
+class PostFragment : Fragment() {
 
     private val viewModel: PostViewModel by viewModels()
 
@@ -50,10 +50,12 @@ class PostFragment  : Fragment() {
     }
 
     private fun subscribeUi() {
-        viewModel.posts.observe(viewLifecycleOwner,
+        viewModel.posts.observe(
+            viewLifecycleOwner,
             {
                 populateAdapter(it)
-            })
+            }
+        )
     }
 
     private fun populateAdapter(it: List<PostEntity>?) {

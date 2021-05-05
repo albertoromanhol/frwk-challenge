@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class TodoRepositoryImpl @Inject constructor(
     private val todoDao: TodoDao
-): TodoRepository {
+) : TodoRepository {
     override fun getTodos(): LiveData<List<TodoEntity>> = todoDao.getTodos()
 
     override suspend fun insertTodos(todos: List<TodoEntity>) {

@@ -7,12 +7,12 @@ import com.mobile.frwk.data.source.repository.contract.PostRepository
 import javax.inject.Inject
 
 class PostRepositoryImpl @Inject constructor(
-    private val postDao : PostDao
-    ): PostRepository {
+    private val postDao: PostDao
+) : PostRepository {
 
     // <editor-fold desc="[ Public Functions ]">
 
-    override fun getPosts() : LiveData<List<PostEntity>> = postDao.getPosts()
+    override fun getPosts(): LiveData<List<PostEntity>> = postDao.getPosts()
 
     override suspend fun insertPosts(posts: List<PostEntity>) {
         postDao.insert(posts)

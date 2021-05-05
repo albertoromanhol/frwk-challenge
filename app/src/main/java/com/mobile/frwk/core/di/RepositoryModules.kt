@@ -28,5 +28,4 @@ abstract class RepositoryModules {
     abstract fun bindTodoRepository(
         todoRepositoryImpl: TodoRepositoryImpl
     ): TodoRepository
-
 }

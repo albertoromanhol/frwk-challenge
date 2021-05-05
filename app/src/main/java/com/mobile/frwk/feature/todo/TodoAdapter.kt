@@ -24,10 +24,12 @@ class TodoAdapter : ListAdapter<TodoEntity, TodoAdapter.ViewHolder>(TodoDiffCall
     ) : RecyclerView.ViewHolder(binding?.root!!) {
         fun bind(item: TodoEntity) {
 
-            binding?.todoItemId?.text = item.id.toString()
-            binding?.todoItemUserId?.text = item.userId.toString()
-            binding?.todoItemTitle?.text = item.title
-            binding?.todoItemCompleted?.text = item.completed.toString()
+            binding?.todoItemId?.text = "id: ${item.id}"
+            binding?.todoItemUserId?.text = "userId: ${item.userId}"
+            binding?.todoItemTitle?.text = "title: ${item.title}"
+            binding?.todoItemCompleted?.text = if (item.completed) "completed" else "not completed"
+
+            binding?.todoCard?.isChecked = item.completed
 
             binding?.executePendingBindings()
         }
@@ -41,7 +43,6 @@ class TodoAdapter : ListAdapter<TodoEntity, TodoAdapter.ViewHolder>(TodoDiffCall
         }
     }
 }
-
 
 class TodoDiffCallback : DiffUtil.ItemCallback<TodoEntity>() {
     override fun areItemsTheSame(oldItem: TodoEntity, newItem: TodoEntity): Boolean {

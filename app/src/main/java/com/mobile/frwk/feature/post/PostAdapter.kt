@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mobile.frwk.data.local.database.model.PostEntity
-import com.mobile.frwk.data.local.database.model.TodoEntity
 import com.mobile.frwk.databinding.PostItemBinding
-import com.mobile.frwk.databinding.TodoItemBinding
 
 class PostAdapter : ListAdapter<PostEntity, PostAdapter.ViewHolder>(TodoDiffCallback()) {
 
@@ -26,10 +24,10 @@ class PostAdapter : ListAdapter<PostEntity, PostAdapter.ViewHolder>(TodoDiffCall
     ) : RecyclerView.ViewHolder(binding?.root!!) {
         fun bind(item: PostEntity) {
 
-            binding?.postItemId?.text = item.id.toString()
-            binding?.postItemUserId?.text = item.userId.toString()
-            binding?.postItemTitle?.text = item.title
-            binding?.postItemBody?.text = item.body
+            binding?.postItemId?.text = "id: ${item.id}"
+            binding?.postItemUserId?.text = "userId: ${item.userId}"
+            binding?.postItemTitle?.text = "title: ${item.title}"
+            binding?.postItemBody?.text = "body: ${item.body}"
 
             binding?.executePendingBindings()
         }
@@ -43,7 +41,6 @@ class PostAdapter : ListAdapter<PostEntity, PostAdapter.ViewHolder>(TodoDiffCall
         }
     }
 }
-
 
 class TodoDiffCallback : DiffUtil.ItemCallback<PostEntity>() {
     override fun areItemsTheSame(oldItem: PostEntity, newItem: PostEntity): Boolean {

@@ -50,10 +50,12 @@ class TodoFragment : Fragment() {
     }
 
     private fun subscribeUi() {
-        viewModel.todos.observe(viewLifecycleOwner,
+        viewModel.todos.observe(
+            viewLifecycleOwner,
             {
                 populateAdapter(it)
-            })
+            }
+        )
     }
 
     private fun populateAdapter(it: List<TodoEntity>?) {

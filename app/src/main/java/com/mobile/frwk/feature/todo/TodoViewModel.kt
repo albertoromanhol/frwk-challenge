@@ -9,6 +9,6 @@ import com.mobile.frwk.data.source.repository.contract.TodoRepository
 
 class TodoViewModel @ViewModelInject constructor(
     todoRepository: TodoRepository
-): ViewModel() {
+) : ViewModel() {
     val todos: LiveData<List<TodoEntity>> = todoRepository.getTodos().map { it }
 }

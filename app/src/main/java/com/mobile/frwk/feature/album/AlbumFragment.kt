@@ -50,10 +50,12 @@ class AlbumFragment : Fragment() {
     }
 
     private fun subscribeUi() {
-        viewModel.albums.observe(viewLifecycleOwner,
+        viewModel.albums.observe(
+            viewLifecycleOwner,
             {
                 populateAdapter(it)
-            })
+            }
+        )
     }
 
     private fun populateAdapter(it: List<AlbumEntity>?) {

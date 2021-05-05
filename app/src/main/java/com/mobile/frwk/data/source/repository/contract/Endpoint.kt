@@ -8,11 +8,11 @@ import retrofit2.http.GET
 
 interface Endpoint {
     @GET("posts")
-    fun getPosts() : Call<List<PostEntity>>
+    fun getPosts(): Call<List<PostEntity>>
 
     @GET("albums")
-    fun getAlbums() : Call<List<AlbumEntity>>
+    fun getAlbums(): Call<List<AlbumEntity>>
 
     @GET("todos")
-    fun getTodos() : Call<List<TodoEntity>>
+    fun getTodos(): Call<List<TodoEntity>>
 }

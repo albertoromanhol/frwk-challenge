@@ -9,5 +9,4 @@ import com.mobile.frwk.data.local.database.model.AlbumEntity
 abstract class AlbumDao : BaseDao<AlbumEntity>() {
     @Query("SELECT * from album")
     abstract fun getAlbums(): LiveData<List<AlbumEntity>>
-
 }
