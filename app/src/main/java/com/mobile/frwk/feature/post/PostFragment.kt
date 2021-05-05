@@ -33,9 +33,6 @@ class PostFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         setupAdapter()
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         subscribeUi()
     }
 
